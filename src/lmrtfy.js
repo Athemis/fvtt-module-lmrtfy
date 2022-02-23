@@ -99,6 +99,21 @@ class LMRTFY {
                 LMRTFY.abilityModifiers = LMRTFY.parseAbilityModifiers();
                 break;
 
+            case 'ds4':
+                LMRTFY.saveRollMethod = 'rollCheck';
+                LMRTFY.abilityRollMethod = 'rollCheck';
+                LMRTFY.skillRollMethod = 'rollCheck';
+                LMRTFY.abilities = CONFIG.DS4.i18nKeys.attributes;
+                LMRTFY.skills = CONFIG.DS4.i18nKeys.traits;
+                LMRTFY.normalRollEvent = { shiftKey: false, altKey: false, ctrlKey: false };
+                LMRTFY.advantageRollEvent = { shiftKey: false, altKey: false, ctrlKey: false };
+                LMRTFY.disadvantageRollEvent = { shiftKey: false, altKey: false, ctrlKey: false };
+                LMRTFY.specialRolls = {};
+                LMRTFY.abilityAbbreviations = CONFIG.DS4.i18nKeys.attributes;
+                LMRTFY.modIdentifier = 'mod';
+                LMRTFY.abilityModifiers = LMRTFY.parseAbilityModifiers();
+                break;
+
             case 'cof':
                 LMRTFY.saveRollMethod = 'rollStat';
                 LMRTFY.abilityRollMethod = 'rollStat';
@@ -127,7 +142,7 @@ class LMRTFY {
                 LMRTFY.abilityAbbreviations = CONFIG.COC.statAbbreviations;
                 LMRTFY.modIdentifier = 'mod';
                 LMRTFY.abilityModifiers = LMRTFY.parseAbilityModifiers();
-            break;
+                break;
 
             case 'demonlord':
                 const abilities = duplicate(CONFIG.DL.attributes);
@@ -257,7 +272,7 @@ class LMRTFY {
         [`${ability}-based`, 'ability-check', 'all'].forEach((key) => {
             (actor.synthetics.statisticsModifier[key] || []).forEach((m) => modifiers.push(m.clone()));
         });
-        
+
         return new game.pf2e.StatisticModifier(`${game.i18n.localize('LMRTFY.AbilityCheck')} ${game.i18n.localize(mod.label)}`, modifiers);
     }
 
