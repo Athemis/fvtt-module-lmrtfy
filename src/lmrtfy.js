@@ -104,7 +104,7 @@ class LMRTFY {
                 LMRTFY.abilityRollMethod = 'rollCheck';
                 LMRTFY.skillRollMethod = 'rollCheck';
                 LMRTFY.abilities = CONFIG.DS4.i18nKeys.attributes;
-                LMRTFY.skills = CONFIG.DS4.i18nKeys.traits;
+                LMRTFY.skills = CONFIG.DS4.i18nKeys.checks;
                 LMRTFY.normalRollEvent = { shiftKey: false, altKey: false, ctrlKey: false };
                 LMRTFY.advantageRollEvent = { shiftKey: false, altKey: false, ctrlKey: false };
                 LMRTFY.disadvantageRollEvent = { shiftKey: false, altKey: false, ctrlKey: false };
